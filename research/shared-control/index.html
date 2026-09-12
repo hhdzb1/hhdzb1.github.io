@@ -1,0 +1,170 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Shared Control on Curved Surfaces · Yi Ba (Evan Brooks) | Robotics &amp; Autonomous Systems</title>
+<meta name="description" content="Yi Ba (Evan Brooks) is an undergraduate researcher at Wuhan University of Technology working on autonomous navigation, robot perception, and human–robot shared control.">
+<meta name="author" content="Yi Ba">
+<meta name="theme-color" content="#ffffff">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Yi Ba (Evan Brooks) | Robotics &amp; Autonomous Systems">
+<meta property="og:description" content="Yi Ba (Evan Brooks) is an undergraduate researcher at Wuhan University of Technology working on autonomous navigation, robot perception, and human–robot shared control.">
+
+<link rel="canonical" href="https://hhdzb1.github.io/research/shared-control/">
+<meta property="og:url" content="https://hhdzb1.github.io/research/shared-control/">
+
+<link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="stylesheet" href="/assets/css/custom.css">
+
+<script>document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, "") + " js ";</script>
+
+    <!-- Add verified site integrations here when needed. -->
+
+  </head>
+
+  <body>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+    <div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav" aria-label="Main navigation">
+        <button class="hidden" type="button" aria-label="More navigation links" aria-expanded="false" aria-controls="overflow-navigation"><div class="navicon"></div></button>
+        <ul class="visible-links">
+          <li class="masthead__menu-item masthead__menu-item--lg masthead__menu-home-item"><a href="/#about-me">Homepage</a></li>
+          
+            <li class="masthead__menu-item"><a href="/#about-me">About Me</a></li>
+          
+            <li class="masthead__menu-item"><a href="/#education">Education</a></li>
+          
+            <li class="masthead__menu-item"><a href="/#experience">Experience</a></li>
+          
+            <li class="masthead__menu-item"><a href="/#research">Research</a></li>
+          
+            <li class="masthead__menu-item"><a href="/#manuscript">Publications</a></li>
+          
+            <li class="masthead__menu-item"><a href="/#honors">Honors & Awards</a></li>
+          
+            <li class="masthead__menu-item"><a href="/#skills">Skills</a></li>
+          
+        </ul>
+        <ul id="overflow-navigation" class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div id="main" role="main" class=" is-full-width">
+      
+
+    
+      <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
+        <meta itemprop="headline" content="Shared Control on Curved Surfaces">
+        <div class="page__inner-wrap">
+          <section class="page__content" itemprop="text">
+            <p><a href="/#research">← Back to research</a></p>
+
+<h1 id="shared-control-on-curved-surfaces">Shared Control on Curved Surfaces</h1>
+
+<p>Wuhan University of Technology · Apr 2026–Present<br />
+Undergraduate Researcher · Advisor: Prof. Jing Luo</p>
+
+<p>This project studies how a robot can maintain stable contact with an unknown curved surface while allowing a human operator to safely adjust its motion in real time.</p>
+
+<p>I developed a surface-corridor framework that combines geometry-aware motion, force regulation, and intent-aware shared control.</p>
+
+<h2 id="research-highlight-video--57-s">Research Highlight Video — 57 s</h2>
+
+<figure class="project-video">
+  <video controls="" playsinline="" preload="metadata" aria-label="Shared Control on Curved Surfaces research highlight video">
+    <source src="/video/SharedCurve.mp4" type="video/mp4" />
+    Your browser does not support embedded MP4 video.
+  </video>
+</figure>
+
+<div class="experiment-cards">
+  <div class="experiment-card">
+    <h3>Exp. 1 Surface Frame Estimation</h3>
+    <a href="/video/experiment1.mp4" target="_blank" rel="noopener" aria-label="Watch full video: Experiment 1 Surface Frame Estimation (opens in a new tab)">Watch full video →</a>
+  </div>
+  <div class="experiment-card">
+    <h3>Exp. 2 Force Control &amp; Virtual Fixture</h3>
+    <a href="/video/experiment2.mp4" target="_blank" rel="noopener" aria-label="Watch full video: Experiment 2 Force Control and Virtual Fixture (opens in a new tab)">Watch full video →</a>
+  </div>
+  <div class="experiment-card">
+    <h3>Exp. 3 Human-in-the-Loop Shared Control</h3>
+    <a href="/video/experiment3.mp4" target="_blank" rel="noopener" aria-label="Watch full video: Experiment 3 Human-in-the-Loop Shared Control (opens in a new tab)">Watch full video →</a>
+  </div>
+</div>
+
+<section class="contribution-panel" aria-labelledby="my-contributions">
+  <h2 id="my-contributions">My Contributions</h2>
+  <dl class="contribution-list">
+    <div>
+      <dt>Surface Geometry</dt>
+      <dd>Designed a <strong>trajectory-conditioned corridor</strong> from registered point clouds using multiscale robust normal estimation, sign alignment, and two-dimensional smoothing.</dd>
+    </div>
+    <div>
+      <dt>Shared Autonomy</dt>
+      <dd>Developed <strong>confidence-weighted intent arbitration</strong> that modulates lateral assistance using input amplitude, speed, persistence, directional consistency, and task phase.</dd>
+    </div>
+    <div>
+      <dt>Force Control</dt>
+      <dd>Integrated <strong>virtual fixtures and disturbance-observer-enhanced normal admittance</strong>, separating autonomous path progression, lateral human correction, and normal-force regulation.</dd>
+    </div>
+  </dl>
+</section>
+
+<p>The system uses ROS with a seven-DoF Sawyer robot, Kinect v2, a wrist force/torque sensor, and a Geomagic Touch device.</p>
+
+<p><a href="/images/sawyer-platform.png"><img src="/images/sawyer-platform.png" alt="Sawyer shared-control experimental platform" /></a></p>
+
+<h2 id="evaluation">Evaluation</h2>
+
+<div class="evaluation-cards">
+  <div class="evaluation-card">
+    <p class="evaluation-value">13.54° → 1.31°</p>
+    <h3>Surface-frame discontinuity</h3>
+    <p class="evaluation-detail">P95 adjacent-normal increment, compared with standard moving least squares.</p>
+  </div>
+  <div class="evaluation-card">
+    <p class="evaluation-value">≈28% → 1.1%</p>
+    <h3>Time outside virtual fixture</h3>
+    <p class="evaluation-detail">Fraction of time outside the lateral band.</p>
+  </div>
+  <div class="evaluation-card">
+    <p class="evaluation-value">−18.1%</p>
+    <h3>Unintended lateral deviation</h3>
+    <p class="evaluation-detail">Reduction in maximum deviation; intentional-motion correlation: 0.960 ± 0.019.</p>
+  </div>
+</div>
+
+<p><strong>Scope of the evidence.</strong> Tests used five runs per condition on a static mannequin. The shared-control pilot involved a single operator and completed without contact loss. Moving and deformable surfaces remain untested.</p>
+
+<h2 id="submitted-manuscript">Submitted manuscript</h2>
+
+<p><strong>Surface-Corridor-Based Intent-Aware Shared Control for Human-Guided Contact Motion on Curved Surfaces</strong></p>
+
+<p><strong>Yi Ba</strong>, Chunhan Wang, Biwei Tang, Muye Pang, Jin Shi, Yahong Chen, and Jing Luo.<br />
+Submitted to <em>IEEE Transactions on Automation Science and Engineering</em>, 2026.</p>
+
+<p><a href="mailto:evan_brooks@whut.edu.cn?subject=Request%20for%20shared-control%20manuscript">Request manuscript</a> · <a href="/">Back to homepage</a></p>
+
+          </section>
+        </div>
+      </article>
+    </div>
+
+    <script src="/assets/js/main.min.js"></script>
+<script src="/assets/js/navigation-accessibility.js" defer></script>
+<script src="/assets/js/email-copy.js" defer></script>
+
+
+  </body>
+</html>

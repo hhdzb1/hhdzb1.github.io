@@ -1,0 +1,148 @@
+/* Keep AcadHomepage's appearance with small readability and layout adjustments. */
+html { font-size: 18px; }
+/* Match the centered container width of anchor1021.github.io. */
+#main, .masthead__inner-wrap { max-width: 930px; }
+/* Menu measurements must use final dimensions when crossing a breakpoint. */
+.greedy-nav, .greedy-nav ul, .greedy-nav li { transition: none; }
+.greedy-nav a { transition: color .2s ease; }
+/* Desktop links stay visible; wrapping also accommodates enlarged browser text. */
+@media (min-width: 768px) {
+  .greedy-nav button { display: none; }
+  .greedy-nav .visible-links { display: flex; flex-wrap: wrap; align-items: center; gap: 0 1.1em; width: 100%; }
+  .greedy-nav .visible-links > li { display: block; padding: 0; }
+  .greedy-nav .visible-links a { margin: 0; font-size: .9rem; }
+}
+.greedy-nav button:focus-visible { outline: 2px solid #224b8d; outline-offset: 3px; }
+.no-js .greedy-nav .visible-links { display: flex; flex-wrap: wrap; }
+.no-js .greedy-nav .visible-links > li { padding: 0; }
+/* The homepage profile belongs only to the introduction, above full-width sections. */
+#main.has-profile-intro > .page,
+#main.is-full-width > .page { float: none; width: 100%; padding: 0; }
+.home-intro { display: grid; align-items: start; gap: 1.5em; margin-bottom: 1.5em; }
+.home-intro > .sidebar { float: none; width: auto; margin: 0; }
+.home-intro__text { min-width: 0; }
+.home-intro .author__english-name { margin: .5em 0; }
+/* Give profile text enough room independently of the page's total width. */
+@media (min-width: 57.8125em) {
+  #main > .sidebar { width: 260px; margin-right: 36px; }
+  #main > .page { width: calc(100% - 296px); padding-left: 0; }
+  .home-intro { grid-template-columns: 260px minmax(0, 1fr); column-gap: 36px; }
+}
+.author__english-name { margin: .5em 0; }
+.author__email { margin: .75em 0; font-size: .9em; line-height: 1.5; }
+.author__email-address { display: block; overflow-wrap: anywhere; user-select: all; }
+.author__email-copy {
+  margin: .25em 0 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #224b8d;
+  font: inherit;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.author__email-status { display: block; }
+.paper-box-image > div { position: relative; max-width: 100%; }
+.paper-box-image img, .paper-box-image video {
+  display: block;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 3px 3px 6px #888;
+}
+.paper-box-image .figure-caption { margin: .6em 0 0; font-size: .85em; }
+.project-video-showcase { margin: 1em 0 2em; }
+.project-video {
+  margin: 1em 0 2em;
+  max-width: 100%;
+}
+.project-video video {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: #000;
+  box-shadow: 2px 2px 6px #888;
+}
+.project-video figcaption { margin-top: .55em; font-size: .85em; }
+.experiment-cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: .75em;
+  margin: 1em 0 2em;
+}
+.experiment-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 1em;
+  border: 1px solid #e3e6eb;
+}
+.page__content .experiment-card h3 { margin: 0 0 .75em; font-size: .95em; line-height: 1.45; }
+.experiment-card a { margin-top: auto; font-size: .9em; }
+.experiment-card a:focus-visible { outline: 2px solid #224b8d; outline-offset: 4px; }
+@media (max-width: 639px) {
+  .experiment-cards { grid-template-columns: 1fr; }
+}
+.contribution-panel {
+  margin: 2em 0 1.5em;
+  padding: 1.25em 1.5em;
+  border-left: 4px solid #224b8d;
+  background: #f3f6fa;
+}
+.page__content .contribution-panel h2 { margin: 0 0 1em; color: #224b8d; }
+.contribution-list { margin: 0; }
+.contribution-list > div {
+  display: grid;
+  grid-template-columns: 9em minmax(0, 1fr);
+  gap: 1em;
+}
+.contribution-list > div + div { margin-top: 1em; padding-top: 1em; border-top: 1px solid #dce3ec; }
+.contribution-list dt { margin: 0; color: #224b8d; font-weight: 700; }
+.contribution-list dd { margin: 0; }
+.evaluation-cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: .75em;
+  margin: 1em 0 1.25em;
+}
+.evaluation-card { padding: 1em; border: 1px solid #dce3ec; border-top: 3px solid #224b8d; }
+.page__content .evaluation-value {
+  margin: 0 0 .5em;
+  color: #224b8d;
+  font-size: 1.45rem;
+  font-weight: 700;
+  line-height: 1.2;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.page__content .evaluation-card h3 { margin: 0 0 .65em; font-size: 1em; line-height: 1.4; }
+.page__content .evaluation-detail { margin: 0; font-size: .85em; line-height: 1.5; }
+@media (max-width: 767px) {
+  .contribution-panel { padding: 1em; }
+  .contribution-list > div { grid-template-columns: 1fr; gap: .35em; }
+  .evaluation-cards { grid-template-columns: 1fr; }
+}
+.page__content .site-credit { margin-top: 2em; font-size: .85em; }
+.page__content, .paper-box-text { overflow-wrap: break-word; }
+.page__content h1[id] { scroll-margin-top: 4em; }
+/* Navigation already accounts for the masthead; avoid the old empty anchor spacer. */
+.has-profile-intro .page__content h1::before { display: none; }
+.table-wrapper { max-width: 100%; overflow-x: auto; }
+.page__content .simulation-results { padding-left: 0; list-style: none; }
+.simulation-results li { position: relative; padding-left: 1.5em; margin-bottom: .5em; }
+.simulation-results li > span { position: absolute; left: 0; color: #224b8d; }
+
+/* The original mobile profile assumes a short biography. Allow longer names. */
+@media (max-width: 1199px) {
+  .profile_box { flex-wrap: wrap; }
+  .author__avatar { flex: 0 0 75px; }
+  .author__content { flex: 1; min-width: 0; }
+  .author__urls-wrapper { flex: 0 0 100%; margin-top: .5em; }
+}
+@media (max-width: 767px) {
+  html { font-size: 17px; }
+  .greedy-nav .hidden-links { max-width: calc(100vw - 1em); }
+  .greedy-nav .hidden-links a { white-space: normal; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}

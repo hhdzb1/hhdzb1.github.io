@@ -1,0 +1,124 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DynaSCAN · Yi Ba (Evan Brooks) | Robotics &amp; Autonomous Systems</title>
+<meta name="description" content="Yi Ba (Evan Brooks) is an undergraduate researcher at Wuhan University of Technology working on autonomous navigation, robot perception, and human–robot shared control.">
+<meta name="author" content="Yi Ba">
+<meta name="theme-color" content="#ffffff">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Yi Ba (Evan Brooks) | Robotics &amp; Autonomous Systems">
+<meta property="og:description" content="Yi Ba (Evan Brooks) is an undergraduate researcher at Wuhan University of Technology working on autonomous navigation, robot perception, and human–robot shared control.">
+
+<link rel="canonical" href="https://hhdzb1.github.io/research/dynascan/">
+<meta property="og:url" content="https://hhdzb1.github.io/research/dynascan/">
+
+<link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="stylesheet" href="/assets/css/custom.css">
+
+<script>document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, "") + " js ";</script>
+
+    <!-- Add verified site integrations here when needed. -->
+
+  </head>
+
+  <body>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+    <div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav" aria-label="Main navigation">
+        <button class="hidden" type="button" aria-label="More navigation links" aria-expanded="false" aria-controls="overflow-navigation"><div class="navicon"></div></button>
+        <ul class="visible-links">
+          <li class="masthead__menu-item masthead__menu-item--lg masthead__menu-home-item"><a href="/#about-me">Homepage</a></li>
+          
+            <li class="masthead__menu-item"><a href="/#about-me">About Me</a></li>
+          
+            <li class="masthead__menu-item"><a href="/#education">Education</a></li>
+          
+            <li class="masthead__menu-item"><a href="/#experience">Experience</a></li>
+          
+            <li class="masthead__menu-item"><a href="/#research">Research</a></li>
+          
+            <li class="masthead__menu-item"><a href="/#manuscript">Publications</a></li>
+          
+            <li class="masthead__menu-item"><a href="/#honors">Honors & Awards</a></li>
+          
+            <li class="masthead__menu-item"><a href="/#skills">Skills</a></li>
+          
+        </ul>
+        <ul id="overflow-navigation" class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div id="main" role="main" class=" is-full-width">
+      
+
+    
+      <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
+        <meta itemprop="headline" content="DynaSCAN">
+        <div class="page__inner-wrap">
+          <section class="page__content" itemprop="text">
+            <p><a href="/#research">← Back to research</a></p>
+
+<h1 id="dynascan">DynaSCAN</h1>
+
+<p><strong>Dynamic obstacle avoidance for quadruped robots</strong><br />
+Shanghai Jiao Tong University · Jul 2026–Present<br />
+Research Intern · Advisor: Prof. Tong Qin</p>
+
+<p>I am extending SCAN-Planner for the Unitree Go2 with obstacle tracking, motion prediction, and clearance-aware B-spline optimization. The goal is to make local planning consistent with sensing delay, robot body geometry, and the time needed to turn before moving.</p>
+
+<h2 id="my-contribution">My contribution</h2>
+
+<ul>
+  <li>Implemented a <strong>5 m simulated point-cloud observation pipeline</strong> with clustering, constant-velocity Kalman filtering, and data association. The tracker estimates velocity and maintains identities from position observations, without simulator velocities, object IDs, or future trajectories.</li>
+  <li>Developed dynamic-clearance costs along the B-spline and automatic comparison of left/right trajectory seeds. <strong>Projected A</strong>* supplies static detour references.</li>
+  <li>Added an <strong>independent trajectory validator</strong> using a two-cylinder Go2 body model with explicit turning and translation timing before execution.</li>
+</ul>
+
+<h2 id="project-demonstration">Project demonstration</h2>
+
+<figure class="project-video">
+  <video controls="" playsinline="" preload="metadata" aria-label="DynaSCAN dynamic-obstacle avoidance demonstration">
+    <source src="/video/DynaScan.mp4" type="video/mp4" />
+    Your browser does not support embedded MP4 video.
+  </video>
+  <figcaption>DynaSCAN dynamic-obstacle avoidance in a controlled simulation.</figcaption>
+</figure>
+
+<h2 id="preliminary-simulation-results">Preliminary Simulation Results</h2>
+
+<ul class="simulation-results">
+  <li><span aria-hidden="true">✓</span> Collision-free completion in controlled dynamic scenarios</li>
+  <li><span aria-hidden="true">✓</span> Explicit robot-body collision checking</li>
+  <li><span aria-hidden="true">✓</span> Minimum observed dynamic clearance: <strong>0.217–0.288 m</strong></li>
+</ul>
+
+<p><strong>Current focus:</strong> Integrating M-detector outputs, handling prediction errors, and validating the planner on the real Unitree Go2.</p>
+
+<p><strong>Scope of the evidence.</strong> These are small, controlled kinematic simulations. Clearance figures come from exact-future diagnostics; observation tests use simulator-labeled dynamic points without LiDAR occlusion. Reliable avoidance in cluttered scenes and on hardware remains unvalidated.</p>
+
+<p><a href="mailto:evan_brooks@whut.edu.cn">Contact me</a> · <a href="/">Back to homepage</a></p>
+
+          </section>
+        </div>
+      </article>
+    </div>
+
+    <script src="/assets/js/main.min.js"></script>
+<script src="/assets/js/navigation-accessibility.js" defer></script>
+<script src="/assets/js/email-copy.js" defer></script>
+
+
+  </body>
+</html>
