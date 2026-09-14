@@ -22,6 +22,7 @@
 <script>document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, "") + " js ";</script>
 
     <!-- Add verified site integrations here when needed. -->
+<link rel="stylesheet" href="/assets/css/dynascan.css">
 
   </head>
 
@@ -68,47 +69,117 @@
         <meta itemprop="headline" content="DynaSCAN">
         <div class="page__inner-wrap">
           <section class="page__content" itemprop="text">
-            <p><a href="/#research">← Back to research</a></p>
+            <div class="dynascan">
+  <a class="ds-back" href="/#research">← Back to research</a>
 
-<h1 id="dynascan">DynaSCAN</h1>
+  <header class="ds-hero">
+    <p class="ds-eyebrow"><span class="ds-status">Ongoing research</span><span>Jul 2026–Present</span></p>
+    <h1 id="dynascan">Dyna<span>SCAN</span></h1>
+    <p class="ds-subtitle">Dynamic-Aware Local Planning for Quadruped Robots</p>
+    <p class="ds-lead">Extending SCAN-Planner to dynamic scenes through explicit obstacle tracking, motion prediction, and trajectory optimization that accounts for robot geometry and execution time.</p>
+    <p class="ds-affiliation">Shanghai Jiao Tong University · Research Intern<br />Advisor: Prof. Tong Qin</p>
+    <nav class="ds-section-nav" aria-label="DynaSCAN sections">
+      <a href="#project-demonstration">Watch demo <span aria-hidden="true">↗</span></a>
+      <a href="#my-contribution">Explore the method <span aria-hidden="true">↓</span></a>
+      <a href="#preliminary-simulation-results">View results <span aria-hidden="true">↓</span></a>
+    </nav>
+  </header>
 
-<p><strong>Dynamic obstacle avoidance for quadruped robots</strong><br />
-Shanghai Jiao Tong University · Jul 2026–Present<br />
-Research Intern · Advisor: Prof. Tong Qin</p>
+  <section class="ds-demo" id="project-demonstration" aria-labelledby="ds-demo-title">
+    <div class="ds-section-heading ds-demo-heading">
+      <h2 id="ds-demo-title">Planning around moving obstacles</h2>
+      <span class="ds-label">Controlled simulation</span>
+    </div>
+    <figure class="project-video ds-video">
+      <video controls="" playsinline="" preload="metadata" aria-label="DynaSCAN dynamic-obstacle avoidance demonstration" aria-describedby="ds-demo-caption">
+        <source src="/video/DynaScan.mp4" type="video/mp4" />
+        Your browser does not support embedded MP4 video. <a href="/video/DynaScan.mp4">Open the demonstration video</a>.
+      </video>
+      <figcaption id="ds-demo-caption">Local replanning for a simulated quadruped in a dynamic scene. This demonstration is a simulation, not a hardware validation.</figcaption>
+    </figure>
+  </section>
 
-<p>I am extending SCAN-Planner for the Unitree Go2 with obstacle tracking, motion prediction, and clearance-aware B-spline optimization. The goal is to make local planning consistent with sensing delay, robot body geometry, and the time needed to turn before moving.</p>
+  <section class="ds-section" aria-labelledby="ds-extension-title">
+    <p class="ds-eyebrow">01 / Research contribution</p>
+    <h2 id="ds-extension-title">From SCAN-Planner to DynaSCAN</h2>
+    <p class="ds-section-intro">My work adds an explicit dynamic-obstacle pipeline to the existing local planner, connecting what the robot observes to the motion it checks before execution.</p>
+    <div class="ds-extension">
+      <div class="ds-baseline">
+        <p class="ds-small-label">Starting point</p>
+        <h3>SCAN-Planner</h3>
+        <p>Spatial collision-aware local planning for route-guided quadruped navigation.</p>
+        <a href="https://wuyi2121.github.io/SCAN-Planner/">Original project <span aria-hidden="true">↗</span></a>
+      </div>
+      <span class="ds-extension-arrow" aria-hidden="true">→</span>
+      <div class="ds-additions">
+        <p class="ds-small-label">My extensions</p>
+        <h3>DynaSCAN</h3>
+        <ul>
+          <li>Track moving obstacles from point observations</li>
+          <li>Predict motion over the planning horizon</li>
+          <li>Optimize clearance and compare left/right candidates</li>
+          <li>Validate the robot body through turning and translation</li>
+        </ul>
+      </div>
+    </div>
+  </section>
 
-<h2 id="my-contribution">My contribution</h2>
+  <section class="ds-section" id="my-contribution" aria-labelledby="ds-pipeline-title">
+    <p class="ds-eyebrow">02 / System pipeline</p>
+    <h2 id="ds-pipeline-title">How DynaSCAN works</h2>
+    <p class="ds-section-intro">A modular pipeline with a separate trajectory check before execution.</p>
+    <ol class="ds-pipeline" aria-label="Five stages of the DynaSCAN pipeline">
+      <li><span class="ds-step-number" aria-hidden="true">01</span><h3>Observe</h3><p>Simulated dynamic point observations within a 5 m range.</p></li>
+      <li><span class="ds-step-number" aria-hidden="true">02</span><h3>Track</h3><p>Clustering, Kalman filtering, and association across frames.</p></li>
+      <li><span class="ds-step-number" aria-hidden="true">03</span><h3>Predict</h3><p>Short-horizon motion from a constant-velocity model.</p></li>
+      <li><span class="ds-step-number" aria-hidden="true">04</span><h3>Plan</h3><p>Dynamic-clearance B-splines with left/right trajectory seeds.</p></li>
+      <li><span class="ds-step-number" aria-hidden="true">05</span><h3>Validate</h3><p>A two-cylinder body model with turning and translation timing.</p></li>
+    </ol>
+    <div class="ds-method-notes">
+      <div><h3>Estimate motion from observations</h3><p>The point-observation tracker estimates velocity and maintains identities without reading simulator velocities, object IDs, or future trajectories.</p></div>
+      <div><h3>Check the motion that will execute</h3><p>Projected A* supplies static detour references. An independent validator checks optimized trajectories against body geometry and the time needed to turn before moving.</p></div>
+    </div>
+  </section>
 
-<ul>
-  <li>Implemented a <strong>5 m simulated point-cloud observation pipeline</strong> with clustering, constant-velocity Kalman filtering, and data association. The tracker estimates velocity and maintains identities from position observations, without simulator velocities, object IDs, or future trajectories.</li>
-  <li>Developed dynamic-clearance costs along the B-spline and automatic comparison of left/right trajectory seeds. <strong>Projected A</strong>* supplies static detour references.</li>
-  <li>Added an <strong>independent trajectory validator</strong> using a two-cylinder Go2 body model with explicit turning and translation timing before execution.</li>
-</ul>
+  <section class="ds-section" id="preliminary-simulation-results" aria-labelledby="ds-results-title">
+    <p class="ds-eyebrow">03 / Early evidence</p>
+    <h2 id="ds-results-title">Preliminary simulation results</h2>
+    <p class="ds-section-intro">Initial observations from small, controlled kinematic tests. The reported clearance range comes from exact-future diagnostics, not the observation-based tracker above.</p>
+    <div class="ds-results">
+      <div class="ds-result">
+        <p class="ds-small-label">Observed behavior</p>
+        <h3>Collision-free completion</h3>
+        <p>Observed in the current controlled scenarios, including choosing the open side when one side is statically blocked.</p>
+      </div>
+      <div class="ds-result ds-result-metric">
+        <p class="ds-small-label">Minimum dynamic clearance</p>
+        <p class="ds-metric">0.217–0.288 <span>m</span></p>
+        <p>Range across six left-blocked runs using exact-future obstacle information. This is a diagnostic result, not a guaranteed safety margin.</p>
+      </div>
+    </div>
+    <aside class="ds-scope" aria-labelledby="ds-scope-title">
+      <h3 id="ds-scope-title">Current scope</h3>
+      <p>Observation tests use simulator-labeled dynamic points without LiDAR occlusion. Tracking and prediction uncertainty, cluttered scenes, and the gap between nominal turning dynamics and actual execution remain open issues. Reliable dynamic avoidance on hardware has not yet been validated.</p>
+    </aside>
+  </section>
 
-<h2 id="project-demonstration">Project demonstration</h2>
+  <section class="ds-section ds-next" aria-labelledby="ds-next-title">
+    <p class="ds-eyebrow">04 / Work in progress</p>
+    <h2 id="ds-next-title">What I’m working on now</h2>
+    <div class="ds-focus-grid">
+      <div><span class="ds-focus-number" aria-hidden="true">01</span><h3>Real perception</h3><p>Integrating M-detector outputs and addressing missed detections, latency, and track continuity.</p></div>
+      <div><span class="ds-focus-number" aria-hidden="true">02</span><h3>Prediction uncertainty</h3><p>Handling tracking errors and departures from the constant-velocity assumption.</p></div>
+      <div><span class="ds-focus-number" aria-hidden="true">03</span><h3>Hardware validation</h3><p>Integrating and evaluating the planner on the real Unitree Go2.</p></div>
+    </div>
+    <p class="ds-platform"><span>Target platform</span> Unitree Go2 · Livox Mid-360 · ROS</p>
+  </section>
 
-<figure class="project-video">
-  <video controls="" playsinline="" preload="metadata" aria-label="DynaSCAN dynamic-obstacle avoidance demonstration">
-    <source src="/video/DynaScan.mp4" type="video/mp4" />
-    Your browser does not support embedded MP4 video.
-  </video>
-  <figcaption>DynaSCAN dynamic-obstacle avoidance in a controlled simulation.</figcaption>
-</figure>
-
-<h2 id="preliminary-simulation-results">Preliminary Simulation Results</h2>
-
-<ul class="simulation-results">
-  <li><span aria-hidden="true">✓</span> Collision-free completion in controlled dynamic scenarios</li>
-  <li><span aria-hidden="true">✓</span> Explicit robot-body collision checking</li>
-  <li><span aria-hidden="true">✓</span> Minimum observed dynamic clearance: <strong>0.217–0.288 m</strong></li>
-</ul>
-
-<p><strong>Current focus:</strong> Integrating M-detector outputs, handling prediction errors, and validating the planner on the real Unitree Go2.</p>
-
-<p><strong>Scope of the evidence.</strong> These are small, controlled kinematic simulations. Clearance figures come from exact-future diagnostics; observation tests use simulator-labeled dynamic points without LiDAR occlusion. Reliable avoidance in cluttered scenes and on hardware remains unvalidated.</p>
-
-<p><a href="mailto:evan_brooks@whut.edu.cn">Contact me</a> · <a href="/">Back to homepage</a></p>
+  <footer class="ds-footer">
+    <p>Interested in this ongoing work?</p>
+    <a href="mailto:evan_brooks@whut.edu.cn">Contact me <span aria-hidden="true">↗</span></a>
+    <a href="/#research">Back to research <span aria-hidden="true">↗</span></a>
+  </footer>
+</div>
 
           </section>
         </div>
