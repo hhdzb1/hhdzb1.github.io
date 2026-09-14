@@ -16,7 +16,7 @@
 .dynascan .ds-section-nav a { font-size: .82rem; font-weight: 700; text-decoration: none; border-bottom: 1px solid #b7c7dc; padding-bottom: .25rem; }
 .dynascan .ds-section-nav a span { margin-left: .35rem; }
 .dynascan .ds-section-nav a:hover { border-color: var(--ds-blue); }
-.dynascan section[id], .dynascan h1[id] { scroll-margin-top: 2rem; }
+.dynascan section[id], .dynascan h1[id] { scroll-margin-top: 5rem; }
 .dynascan .ds-section-heading { display: flex; align-items: baseline; justify-content: space-between; gap: .4rem 1rem; }
 .dynascan .ds-demo-heading { margin-bottom: .7rem; }
 .dynascan .ds-demo-heading h2 { margin: 0; padding: 0; border: 0; font-size: 1rem; line-height: 1.4; }
