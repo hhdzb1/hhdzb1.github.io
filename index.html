@@ -22,6 +22,7 @@
 <script>document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, "") + " js ";</script>
 
     <!-- Add verified site integrations here when needed. -->
+<link rel="stylesheet" href="/assets/css/learning-projects.css?v=20260915">
 
   </head>
 
@@ -37,21 +38,14 @@
         <button class="hidden" type="button" aria-label="More navigation links" aria-expanded="false" aria-controls="overflow-navigation"><div class="navicon"></div></button>
         <ul class="visible-links">
           <li class="masthead__menu-item masthead__menu-item--lg masthead__menu-home-item"><a href="/#about-me">Homepage</a></li>
-          
             <li class="masthead__menu-item"><a href="/#about-me">About Me</a></li>
-          
             <li class="masthead__menu-item"><a href="/#education">Education</a></li>
-          
             <li class="masthead__menu-item"><a href="/#experience">Experience</a></li>
-          
             <li class="masthead__menu-item"><a href="/#research">Research</a></li>
-          
+            <li class="masthead__menu-item"><a href="/#learning-projects">Learning</a></li>
             <li class="masthead__menu-item"><a href="/#manuscript">Publications</a></li>
-          
             <li class="masthead__menu-item"><a href="/#honors">Honors & Awards</a></li>
-          
             <li class="masthead__menu-item"><a href="/#skills">Skills</a></li>
-          
         </ul>
         <ul id="overflow-navigation" class="hidden-links hidden"></ul>
       </nav>
@@ -240,6 +234,44 @@ Advisor: Prof. Tong Qin</p>
     <p><a href="/research/dynascan/"><strong>Project details &amp; validation</strong></a></p>
 
   </div></div>
+
+<h1 id="learning-projects">Learning Projects</h1>
+
+<div class="learning-projects">
+  <article class="learning-project" aria-labelledby="learning-act-title">
+    <div class="learning-project__intro">
+      <p class="learning-project__category">Imitation learning <span aria-hidden="true">·</span> Reproduction</p>
+      <h2 id="learning-act-title">Action Chunking with Transformers (ACT)</h2>
+      <p>I reproduced ACT for two tabletop manipulation tasks, exploring how robots learn manipulation behaviors from demonstrations.</p>
+      <p class="learning-project__method">ACT predicts a sequence of actions at a time, rather than a single next action.</p>
+      <a class="learning-project__reference" href="https://tonyzhaozh.github.io/aloha/">Original ACT project · RSS 2023</a>
+    </div>
+    <div class="learning-project__demos">
+      <figure class="learning-demo">
+        <video controls="" muted="" loop="" playsinline="" preload="metadata" aria-label="Action Chunking with Transformers (ACT): Place a roll of tape over a bottle." aria-describedby="learning-act-tape-bottle-caption">
+          <source src="/video/ImL1.mp4" type="video/mp4" />
+          Your browser does not support embedded MP4 video. <a href="/video/ImL1.mp4">Open the demonstration video</a>.
+        </video>
+        <figcaption id="learning-act-tape-bottle-caption">
+          <h3>Tape roll onto a bottle</h3>
+          <p>Place a roll of tape over a bottle.</p>
+          <a href="/video/ImL1.mp4" target="_blank" rel="noopener">Open video <span aria-hidden="true">·</span> 6 s</a>
+        </figcaption>
+      </figure>
+      <figure class="learning-demo">
+        <video controls="" muted="" loop="" playsinline="" preload="metadata" aria-label="Action Chunking with Transformers (ACT): Pick up a pen and place it in a box." aria-describedby="learning-act-pen-box-caption">
+          <source src="/video/ImL2.mp4" type="video/mp4" />
+          Your browser does not support embedded MP4 video. <a href="/video/ImL2.mp4">Open the demonstration video</a>.
+        </video>
+        <figcaption id="learning-act-pen-box-caption">
+          <h3>Pen into a box</h3>
+          <p>Pick up a pen and place it in a box.</p>
+          <a href="/video/ImL2.mp4" target="_blank" rel="noopener">Open video <span aria-hidden="true">·</span> 6 s</a>
+        </figcaption>
+      </figure>
+    </div>
+  </article>
+</div>
 
 <h1 id="manuscript">Publications</h1>
 

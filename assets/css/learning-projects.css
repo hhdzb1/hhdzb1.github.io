@@ -1,0 +1,29 @@
+/* Homepage learning projects: quiet typography and uncropped portrait demos. */
+.learning-projects { color: #424242; }
+.learning-projects .learning-project { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.75fr); gap: 2em; align-items: start; margin: 1.5em 0 2em; }
+.learning-projects .learning-project + .learning-project { padding-top: 2em; border-top: 1px solid #ddd; }
+.learning-projects .learning-project__category { margin: 0 0 .8em; color: #656565; font-size: 14px; }
+.learning-projects .learning-project__category span { margin: 0 .25em; }
+.learning-projects .learning-project__intro h2 { margin: 0 0 .8em; padding: 0; border: 0; color: #292929; font-size: 24px; line-height: 1.3; }
+.learning-projects .learning-project__intro > p:not(.learning-project__category) { margin: 0 0 1em; font-size: 16px; line-height: 1.65; }
+.learning-projects .learning-project__intro .learning-project__method { color: #606060; }
+.learning-projects .learning-project__reference { display: inline-block; margin-top: .25em; font-size: 14px; }
+.learning-projects a { color: #444; text-underline-offset: 3px; }
+.learning-projects a:hover { color: #a6192e; }
+.learning-projects a:focus-visible, .learning-projects video:focus-visible { outline: 2px solid #555; outline-offset: 4px; }
+.learning-projects .learning-project__demos { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.1em; align-items: start; }
+.learning-projects .learning-demo { min-width: 0; margin: 0; }
+.learning-projects .learning-demo video { display: block; width: 100%; aspect-ratio: 9 / 16; object-fit: contain; background: #f3f3f3; border-radius: 3px; box-shadow: none; }
+.learning-projects .learning-demo figcaption { margin-top: .8em; color: #555; font-family: inherit; }
+.learning-projects .learning-demo h3 { margin: 0 0 .4em; color: #333; font-size: 17px; font-weight: 700; line-height: 1.35; }
+.learning-projects .learning-demo figcaption p { margin: 0 0 .5em; font-size: 14px; line-height: 1.5; }
+.learning-projects .learning-demo figcaption a { font-size: 14px; }
+@media (max-width: 767px) {
+  .learning-projects .learning-project { grid-template-columns: 1fr; gap: 1.4em; }
+  .learning-projects .learning-project__intro { max-width: 36em; }
+  .learning-projects .learning-project__demos { max-width: 560px; width: 100%; margin: 0 auto; }
+}
+@media (max-width: 420px) {
+  .learning-projects .learning-project__demos { gap: .8em; }
+  .learning-projects .learning-demo h3 { font-size: 16px; }
+}
